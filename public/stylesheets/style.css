@@ -1,4 +1,24 @@
 form.signup,
 form.login {
   margin-top: 50px;
+  text-align: center;
+
+}
+
+button, .btn {
+  background-color: #ff7e00;
+  color: white;
+}
+
+.link {
+  color: #ff7e00;
+}
+
+.container {
+  margin-top: 8%;
+}
+
+.sign-up {
+  font-family: 'Goldman', cursive;
+  color: #ff1f87;
 }
