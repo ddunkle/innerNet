@@ -1,3 +1,8 @@
+.formPage {
+  background-image: url("https://cdn.pixabay.com/photo/2016/08/02/07/45/the-polygon-1562743_1280.jpg");
+  background-size: 100%;
+}
+
 form.signup,
 form.login {
   margin-top: 50px;
@@ -21,4 +26,15 @@ button, .btn {
 .sign-up {
   font-family: 'Goldman', cursive;
   color: #ff1f87;
+}
+
+.card {
+  background-color: white;
+  width: 75%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  padding: 30px;
+}
+
+.navbar {
+  color: #ff7e00;
 }
