@@ -1,6 +1,5 @@
-.formPage {
-  background-image: url("https://cdn.pixabay.com/photo/2016/08/02/07/45/the-polygon-1562743_1280.jpg");
-  background-size: 100%;
+body {
+  background: url("/img/background.png");
 }
 
 form.signup,
@@ -23,16 +22,25 @@ button, .btn {
   margin-top: 8%;
 }
 
-.sign-up {
+.form-control {
+  margin-bottom: 2vw;
+}
+
+.sign-up, .card-title {
   font-family: 'Goldman', cursive;
   color: #ff1f87;
+}
+
+.card-title {
+  font-size: 3vw;
 }
 
 .card {
   background-color: white;
   width: 75%;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  padding: 30px;
+  /* padding: 30px; */
+  margin: 2vw;
 }
 
 .navbar {
