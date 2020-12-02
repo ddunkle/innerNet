@@ -1,11 +1,6 @@
 body {
-  background-image: url("https://cdn.pixabay.com/photo/2016/08/02/07/45/the-polygon-1562743_1280.jpg");
-  background-size: 100%;
+  background: url("/img/background.png");
 }
-
-/* body {
-  background-color: black;
-} */
 
 form.signup,
 form.login {
