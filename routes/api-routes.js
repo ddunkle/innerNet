@@ -52,6 +52,7 @@ module.exports = function (app) {
     }
   });
 
+
   // -----------------------App Routing-----------------------
   // GET route for getting all items
   app.get("/api/items", function (req, res) {
@@ -87,8 +88,22 @@ module.exports = function (app) {
         res.json(dbItem);
       });
   });
+=======
+  app.post("/api/user_post", (req, res) => {
+    db.User.create({
+      email: req.body.email,
+      password: req.body.password
+    })
+      .then(() => {
+        res.redirect(307, "/api/login");
+      })
+      .catch(err => {
+        res.status(401).json(err);
+      });
+  });
+
+
 };
 
-app.get("/api/user_posts/:userID", (req,res) => {
-  
-})
+
+
