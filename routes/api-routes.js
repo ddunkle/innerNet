@@ -2,7 +2,8 @@
 const db = require("../models");
 const passport = require("../config/passport");
 
-module.exports = function(app) {
+module.exports = function (app) {
+  // -------------Passport Authentication Routing-------------
   // Using the passport.authenticate middleware with our local strategy.
   // If the user has valid login credentials, send them to the members page.
   // Otherwise the user will be sent an error
@@ -51,6 +52,43 @@ module.exports = function(app) {
     }
   });
 
+
+  // -----------------------App Routing-----------------------
+  // GET route for getting all items
+  app.get("/api/items", function (req, res) {
+    // findAll returns all entries for a table when used with no options
+    db.Item.findAll({}).then(function (dbItem) {
+      // We have access to the items as an argument inside of the callback function
+      res.json(dbItem);
+    });
+  });
+
+  // POST route for saving a new item
+  app.post("/api/items", function (req, res) {
+    db.Item.create({
+      text: req.body.text,
+      active: req.body.active
+    })
+      .then(function (dbItem) {
+        res.json(dbItem);
+      })
+      .catch(function (err) {
+        res.json(err)
+      });
+  });
+
+  // DELETE route for deleting an item 
+  app.delete("/api/items/:id", function (req, res) {
+    db.Item.destroy({
+      where: {
+        id: req.params.id
+      }
+    })
+      .then(function (dbItem) {
+        res.json(dbItem);
+      });
+  });
+=======
   app.post("/api/user_post", (req, res) => {
     db.User.create({
       email: req.body.email,
@@ -63,6 +101,7 @@ module.exports = function(app) {
         res.status(401).json(err);
       });
   });
+
 
 };
 
