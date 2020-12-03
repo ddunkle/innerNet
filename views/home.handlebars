@@ -13,10 +13,11 @@
         <div>
           <ul class="toDo-list"></ul>
         </div>
-        <form>
+        <form action="/api/toDos" method="post">
           <div class="form-group">
             <label for="inputItem"></label>
-            <input type="item" class="toDo-item form-control">
+            <input id="titleToDo" type="item" name="titleToDo" class="toDo-item form-control">
+            <input type="hidden" id="categoryToDo" name="categoryToDo" value="toDo">
             <button type="submit" class="add-item btn btn-light">Add Item</button>
           </div>
         </form>
@@ -31,10 +32,18 @@
         <div>
           <ul class="toRead-list"></ul>
         </div>
-        <form>
+        {{!-- <form>
           <div class="form-group">
             <label for="inputItem"></label>
             <input type="item" class="toRead-item form-control">
+            <button type="submit" class="add-item btn btn-light">Add Item</button>
+          </div>
+        </form> --}}
+        <form action="/api/toReads" method="post">
+          <div class="form-group">
+            <label for="inputItem"></label>
+            <input id="titleToRead" type="item" name="titleToRead" class="toDo-item form-control">
+            <input type="hidden" id="categoryToRead" name="categoryToRead" value="toRead">
             <button type="submit" class="add-item btn btn-light">Add Item</button>
           </div>
         </form>

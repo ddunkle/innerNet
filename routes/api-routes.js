@@ -64,13 +64,37 @@ module.exports = function (app) {
   });
 
   // POST route for saving a new item
-  app.post("/api/items", function (req, res) {
-    db.Item.create({
-      text: req.body.text,
-      active: req.body.active
+  app.post("/api/toDos", function (req, res) {
+    console.log("inside api post")
+    console.log(req.body);
+    db.Post.create({
+      title: req.body.titleToDo,
+      category: req.body.categoryToDo,
+      isActive: true,
+      UserId: req.user.id
     })
-      .then(function (dbItem) {
-        res.json(dbItem);
+      .then(function (dbPost) {
+        console.log(dbPost);
+        res.json(dbPost);
+      })
+      .catch(function (err) {
+        res.json(err)
+        res.end()
+      });
+  });
+
+  app.post("/api/toReads", function (req, res) {
+    console.log("inside api post")
+    console.log(req.body);
+    db.Post.create({
+      title: req.body.titleToRead,
+      category: req.body.categoryToRead,
+      isActive: true,
+      UserId: req.user.id
+    })
+      .then(function (dbPost) {
+        console.log(dbPost);
+        res.json(dbPost);
       })
       .catch(function (err) {
         res.json(err)
@@ -88,7 +112,7 @@ module.exports = function (app) {
         res.json(dbItem);
       });
   });
-=======
+
   app.post("/api/user_post", (req, res) => {
     db.User.create({
       email: req.body.email,
