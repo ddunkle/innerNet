@@ -60,10 +60,18 @@
         <div>
           <ul class="toWatch-list"></ul>
         </div>
-        <form>
+        {{!-- <form>
           <div class="form-group">
             <label for="inputItem"></label>
             <input type="item" class="toWatch-item form-control">
+            <button type="submit" class="add-item btn btn-light">Add Item</button>
+          </div>
+        </form> --}}
+        <form action="/api/toWatches" method="post">
+          <div class="form-group">
+            <label for="inputItem"></label>
+            <input id="titleToWatch" type="item" name="titleToWatch" class="toDo-item form-control">
+            <input type="hidden" id="categoryToWatch" name="categoryToWatch" value="toWatch">
             <button type="submit" class="add-item btn btn-light">Add Item</button>
           </div>
         </form>
@@ -78,10 +86,18 @@
         <div>
           <ul class="toBuy-list"></ul>
         </div>
-        <form>
+        {{!-- <form>
           <div class="form-group">
             <label for="inputItem"></label>
             <input type="item" class="toBuy-item form-control">
+            <button type="submit" class="add-item btn btn-light">Add Item</button>
+          </div>
+        </form> --}}
+        <form action="/api/toBuys" method="post">
+          <div class="form-group">
+            <label for="inputItem"></label>
+            <input id="titleToBuy" type="item" name="titleToBuy" class="toDo-item form-control">
+            <input type="hidden" id="categoryToBuy" name="categoryToBuy" value="toBuy">
             <button type="submit" class="add-item btn btn-light">Add Item</button>
           </div>
         </form>
