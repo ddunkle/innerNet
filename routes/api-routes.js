@@ -65,8 +65,6 @@ module.exports = function (app) {
 
   // POST route for saving a new item
   app.post("/api/toDos", function (req, res) {
-    console.log("inside api post")
-    console.log(req.body);
     db.Post.create({
       title: req.body.titleToDo,
       category: req.body.categoryToDo,
@@ -74,7 +72,6 @@ module.exports = function (app) {
       UserId: req.user.id
     })
       .then(function (dbPost) {
-        console.log(dbPost);
         res.json(dbPost);
       })
       .catch(function (err) {
@@ -84,8 +81,6 @@ module.exports = function (app) {
   });
 
   app.post("/api/toReads", function (req, res) {
-    console.log("inside api post")
-    console.log(req.body);
     db.Post.create({
       title: req.body.titleToRead,
       category: req.body.categoryToRead,
@@ -93,7 +88,36 @@ module.exports = function (app) {
       UserId: req.user.id
     })
       .then(function (dbPost) {
-        console.log(dbPost);
+        res.json(dbPost);
+      })
+      .catch(function (err) {
+        res.json(err)
+      });
+  });
+
+  app.post("/api/toWatches", function (req, res) {
+    db.Post.create({
+      title: req.body.titleToWatch,
+      category: req.body.categoryToWatch,
+      isActive: true,
+      UserId: req.user.id
+    })
+      .then(function (dbPost) {
+        res.json(dbPost);
+      })
+      .catch(function (err) {
+        res.json(err)
+      });
+  });
+
+  app.post("/api/toBuys", function (req, res) {
+    db.Post.create({
+      title: req.body.titleToBuy,
+      category: req.body.categoryToBuy,
+      isActive: true,
+      UserId: req.user.id
+    })
+      .then(function (dbPost) {
         res.json(dbPost);
       })
       .catch(function (err) {
