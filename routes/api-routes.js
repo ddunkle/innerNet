@@ -53,84 +53,98 @@ module.exports = function (app) {
     }
   });
 
-<<<<<<< HEAD
-=======
 
   // -----------------------App Routing-----------------------
   // GET route for getting all items
 
   app.get("/api/items", (req, res) => {
     // If the user already has an account send them to the members page
-      db.Post.findAll({
-        where: {
-          UserId: req.user.id
-        }
-      }).then(function (dbPost) {
-        res.json(dbPost);
-        // res.render("home");
-      })
+    db.Post.findAll({
+      where: {
+        UserId: req.user.id
+      }
+    }).then(function (dbPost) {
+      res.json(dbPost);
+      // res.render("home");
+    })
   });
 
   // POST route for saving a new item
   app.post("/api/toDos", function (req, res) {
-    db.Post.create({
-      title: req.body.titleToDo,
-      category: req.body.categoryToDo,
-      isActive: true,
-      UserId: req.user.id
-    })
-      .then(function (dbPost) {
-        res.redirect("/members");
+    if (req.body.titleToDo) {
+      db.Post.create({
+        title: req.body.titleToDo,
+        category: req.body.categoryToDo,
+        isActive: true,
+        UserId: req.user.id
       })
-      .catch(function (err) {
-        res.json(err)
-        res.end()
-      });
+        .then(function (dbPost) {
+          res.redirect("/members");
+        })
+        .catch(function (err) {
+          res.json(err)
+          res.end()
+        });
+    } else {
+      res.redirect("/members")
+    }
   });
 
   app.post("/api/toReads", function (req, res) {
-    db.Post.create({
-      title: req.body.titleToRead,
-      category: req.body.categoryToRead,
-      isActive: true,
-      UserId: req.user.id
-    })
-      .then(function (dbPost) {
-        res.redirect("/members");
+    if (req.body.titleToRead) {
+      db.Post.create({
+        title: req.body.titleToRead,
+        category: req.body.categoryToRead,
+        isActive: true,
+        UserId: req.user.id
       })
-      .catch(function (err) {
-        res.json(err)
-      });
+        .then(function (dbPost) {
+          res.redirect("/members");
+        })
+        .catch(function (err) {
+          res.json(err)
+        });
+    } else {
+      res.redirect("/members")
+    }
   });
 
   app.post("/api/toWatches", function (req, res) {
-    db.Post.create({
-      title: req.body.titleToWatch,
-      category: req.body.categoryToWatch,
-      isActive: true,
-      UserId: req.user.id
-    })
-      .then(function (dbPost) {
-        res.redirect("/members");
+    if (req.body.titleToWatch) {
+      db.Post.create({
+        title: req.body.titleToWatch,
+        category: req.body.categoryToWatch,
+        isActive: true,
+        UserId: req.user.id
       })
-      .catch(function (err) {
-        res.json(err)
-      });
+        .then(function (dbPost) {
+          res.redirect("/members");
+        })
+        .catch(function (err) {
+          res.json(err)
+        });
+    } else {
+      res.redirect("/members")
+    }
   });
 
   app.post("/api/toBuys", function (req, res) {
-    db.Post.create({
-      title: req.body.titleToBuy,
-      category: req.body.categoryToBuy,
-      isActive: true,
-      UserId: req.user.id
-    })
-      .then(function (dbPost) {
-        res.redirect("/members");
+    if (req.body.titleToBuy) {
+      db.Post.create({
+        title: req.body.titleToBuy,
+        category: req.body.categoryToBuy,
+        isActive: true,
+        UserId: req.user.id
       })
-      .catch(function (err) {
-        res.json(err)
-      });
+        .then(function (dbPost) {
+          res.redirect("/members");
+        })
+        .catch(function (err) {
+          res.json(err)
+        });
+    } else {
+      res.redirect("/members")
+    }
   });
 
   // DELETE route for deleting an item 
@@ -145,7 +159,6 @@ module.exports = function (app) {
       });
   });
 
->>>>>>> 591cb253cae117b815a355a53f3e9e69e0867f7b
   app.post("/api/user_post", (req, res) => {
     db.User.create({
       email: req.body.email,
@@ -159,22 +172,19 @@ module.exports = function (app) {
       });
   });
 
-<<<<<<< HEAD
-=======
-  app.put("/api/archive", (req, res) => {
+  app.get("/api/archive/:id", (req, res) => {
     db.Post.update({
       isActive: false
     }, {
       where: {
-        id: req.body.itemId
+        id: req.params.id
       }
-    }).then(function(dbPost){
-      res.json(dbPost);
+    }).then(function (dbPost) {
+      res.redirect("/members")
     })
   })
 
 
->>>>>>> 591cb253cae117b815a355a53f3e9e69e0867f7b
 };
 
 
