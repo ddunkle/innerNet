@@ -11,7 +11,14 @@
         <h5 class="card-title">To Do</h5>
         <hr>
         <div>
-          <ul class="toDo-list"></ul>
+          {{!-- USE HANDLEBARS TO RENDER ITEMS BASED ON CATEGORY --}}
+          <ul class="toDo-list">
+            {{#each item}}
+            {{#if category=categoryToDo}}
+                   {{> items/item-block isActive=true}}
+            {{/if}}
+            {{/each}}
+          </ul>
         </div>
         <form action="/api/toDos" method="post">
           <div class="form-group">
