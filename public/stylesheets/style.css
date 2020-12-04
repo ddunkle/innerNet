@@ -1,12 +1,12 @@
 body {
   background: url("/img/background.png");
+  padding-bottom: 60px;
 }
 
 form.signup,
 form.login {
   margin-top: 50px;
   text-align: center;
-
 }
 
 button, .btn {
@@ -14,8 +14,8 @@ button, .btn {
   color: white;
 }
 
-.link {
-  color: #ff7e00;
+a {
+  color: #b30cad;
 }
 
 .container {
@@ -37,12 +37,23 @@ button, .btn {
 
 .card {
   background-color: white;
-  width: 75%;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  /* padding: 30px; */
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, 0.4);
+  padding: 10px;
   margin: 2vw;
 }
 
-.navbar {
-  color: #ff7e00;
+.footer {
+  background-color: black;
+  height: 60px;
 }
+
+.logoHeader {
+  padding: 20px;
+  background-color: black;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, 0.4);
+}
+
+.welcome {
+  color: #b30cad;
+}
+

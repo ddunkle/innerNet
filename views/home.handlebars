@@ -1,87 +1,130 @@
 <div class="windowPage">
-<div class="row">
-  <div class="col-md-12 logoHeader">
-    <img src="/img/innerNet-logo-trans.png" alt="innerNet" width="200">
-  </div>
-</div>
-<div class="row">
-  <div class="col-sm-6">
-    <div class="card">
-      <div class="card-body">
-        <h5 class="card-title">To Do</h5>
-        <hr>
-        <div>
-          <ul class="toDo-items"></ul>
-        </div>
-        <form>
-          <div class="form-group">
-            <label for="inputItem"></label>
-            <input type="item" class="form-control">
-            <button type="submit" class="btn btn-light">Add Item</button>
+  <header>
+    <div class="row logoHeader">
+      <div class="col-md-2">
+        <img class="img-fluid" src="/img/innerNet-logo-trans.png" alt="innerNet" max-width="25%">
+      </div>
+      <div class="col-md-10">
+        <div class="row">
+          <div class="col-md-12">
+            <h5 class="float-right welcome">Welcome <span class="member-name"></span></h5>
           </div>
-        </form>
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+            <a class="logOut float-right" href="/logout">
+              Logout
+            </a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </header>
+  <div class="row">
+    <div class="col-sm-6">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">To Do</h5>
+          <hr>
+          <div>
+            {{!-- USE HANDLEBARS TO RENDER ITEMS BASED ON CATEGORY --}}
+            <ul class="toDo-list">
+              {{#each Todos}}
+              {{#if category=categoryToDo}}
+              {{> items/item-block isActive=true}}
+              {{/if}}
+              {{/each}}
+            </ul>
+          </div>
+          <form action="/api/toDos" method="post">
+            <div class="form-group">
+              <label for="inputItem"></label>
+              <input id="titleToDo" type="item" name="titleToDo" class="toDo-item form-control">
+              <input type="hidden" id="categoryToDo" name="categoryToDo" value="toDo">
+              <button type="submit" class="add-item btn btn-light">Add Item</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-6">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">To Read</h5>
+          <hr>
+          <div>
+            <ul class="toRead-list"></ul>
+          </div>
+          <form action="/api/toReads" method="post">
+            <div class="form-group">
+              <label for="inputItem"></label>
+              <input id="titleToRead" type="item" name="titleToRead" class="toDo-item form-control">
+              <input type="hidden" id="categoryToRead" name="categoryToRead" value="toRead">
+              <button type="submit" class="add-item btn btn-light">Add Item</button>
+            </div>
+          </form>
+        </div>
       </div>
     </div>
   </div>
-  <div class="col-sm-6">
-    <div class="card">
-      <div class="card-body">
-        <h5 class="card-title">To Read</h5>
-        <hr>
-        <div>
-          <ul class="toRead-items"></ul>
-        </div>
-        <form>
+  <div class="row">
+    <div class="col-sm-6">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">To Watch</h5>
+          <hr>
+          <div>
+            <ul class="toWatch-list"></ul>
+          </div>
+          {{!-- <form>
           <div class="form-group">
             <label for="inputItem"></label>
-            <input type="item" class="form-control">
-            <button type="submit" class="btn btn-light">Add Item</button>
+            <input type="item" class="toWatch-item form-control">
+            <button type="submit" class="add-item btn btn-light">Add Item</button>
           </div>
-        </form>
+        </form> --}}
+          <form action="/api/toWatches" method="post">
+            <div class="form-group">
+              <label for="inputItem"></label>
+              <input id="titleToWatch" type="item" name="titleToWatch" class="toDo-item form-control">
+              <input type="hidden" id="categoryToWatch" name="categoryToWatch" value="toWatch">
+              <button type="submit" class="add-item btn btn-light">Add Item</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-6">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">To Buy</h5>
+          <hr>
+          <div>
+            <ul class="toBuy-list"></ul>
+          </div>
+          {{!-- <form>
+          <div class="form-group">
+            <label for="inputItem"></label>
+            <input type="item" class="toBuy-item form-control">
+            <button type="submit" class="add-item btn btn-light">Add Item</button>
+          </div>
+        </form> --}}
+          <form action="/api/toBuys" method="post">
+            <div class="form-group">
+              <label for="inputItem"></label>
+              <input id="titleToBuy" type="item" name="titleToBuy" class="toDo-item form-control">
+              <input type="hidden" id="categoryToBuy" name="categoryToBuy" value="toBuy">
+              <button type="submit" class="add-item btn btn-light">Add Item</button>
+            </div>
+          </form>
+        </div>
       </div>
     </div>
   </div>
 </div>
-<div class="row">
-  <div class="col-sm-6">
-    <div class="card">
-      <div class="card-body">
-        <h5 class="card-title">To Watch</h5>
-        <hr>
-        <div>
-          <ul class="toWatch-items"></ul>
-        </div>
-        <form>
-          <div class="form-group">
-            <label for="inputItem"></label>
-            <input type="item" class="form-control">
-            <button type="submit" class="btn btn-light">Add Item</button>
-          </div>
-        </form>
-      </div>
-    </div>
-  </div>
-  <div class="col-sm-6">
-    <div class="card">
-      <div class="card-body">
-        <h5 class="card-title">To Buy</h5>
-        <hr>
-        <div>
-          <ul class="toBuy-items"></ul>
-        </div>
-        <form>
-          <div class="form-group">
-            <label for="inputItem"></label>
-            <input type="item" class="form-control">
-            <button type="submit" class="btn btn-light">Add Item</button>
-          </div>
-        </form>
-      </div>
-    </div>
-  </div>
-</div>
-</div>
-<div class="card-footer text-muted fixed-bottom">
-  <p><br>&copy; 2020</p>
-</div>
-</div>
+<footer class="container-fluid text-center footer text-muted fixed-bottom">
+  <p><br>&copy;
+    2020 Made with <i class="fas fa-heart"></i> and <i class="fas fa-coffee"></i> in Maryland.
+  </p>
+</footer>
