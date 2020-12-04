@@ -150,6 +150,18 @@ module.exports = function (app) {
       });
   });
 
+  app.put("/api/archive", (req, res) => {
+    db.Post.update({
+      isActive: false
+    }, {
+      where: {
+        id: req.body.itemId
+      }
+    }).then(function(dbPost){
+      res.json(dbPost);
+    })
+  })
+
 
 };
 
