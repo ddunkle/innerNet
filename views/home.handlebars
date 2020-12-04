@@ -29,12 +29,12 @@
           <hr>
           <div>
             {{!-- USE HANDLEBARS TO RENDER ITEMS BASED ON CATEGORY --}}
-            <ul class="toDo-list">
-              {{#each Todos}}
+            <ul class="toDo-list" id="toDo">
+              {{!-- {{#each todos}}
               {{#if category=categoryToDo}}
               {{> items/item-block isActive=true}}
               {{/if}}
-              {{/each}}
+              {{/each}} --}}
             </ul>
           </div>
           <form action="/api/toDos" method="post">
@@ -54,7 +54,7 @@
           <h5 class="card-title">To Read</h5>
           <hr>
           <div>
-            <ul class="toRead-list"></ul>
+            <ul class="toRead-list" id="toRead"></ul>
           </div>
           <form action="/api/toReads" method="post">
             <div class="form-group">
@@ -75,7 +75,7 @@
           <h5 class="card-title">To Watch</h5>
           <hr>
           <div>
-            <ul class="toWatch-list"></ul>
+            <ul class="toWatch-list" id="toWatch"></ul>
           </div>
           {{!-- <form>
           <div class="form-group">
@@ -101,7 +101,7 @@
           <h5 class="card-title">To Buy</h5>
           <hr>
           <div>
-            <ul class="toBuy-list"></ul>
+            <ul class="toBuy-list" id="toBuy"></ul>
           </div>
           {{!-- <form>
           <div class="form-group">
