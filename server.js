@@ -4,6 +4,7 @@ const session = require("express-session");
 // Requiring passport as we've configured it
 const passport = require("./config/passport");
 const exphbs = require('express-handlebars');
+const path = require("path");
 
 // Setting up port and requiring models for syncing
 const PORT = process.env.PORT || 8080;
@@ -13,9 +14,22 @@ const app = express();
 
 //Declaring Express to use Handlerbars template engine with main.handlebars as
 //the default layout
-app.engine('handlebars', exphbs({ defaultLayout: 'main' }));
-app.set('view engine', 'handlebars');
+// Added partials directory
+const hbs = exphbs.create({
+  defaultLaout: 'main',
+  layoutsDir: path.join(__dirname, 'views/layouts'),
+  partialsDir: path.join(__dirname, 'views/partials'),
 
+  // Helper functions
+  // helpers: {
+  //   items: function(value, options) {
+  //     return "<li>" + options.fn({ : value }) + "<li>";
+  //   }
+  // }
+});
+
+app.engine('handlebars', hbs.engine);
+app.set('view engine', 'handlebars');
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
