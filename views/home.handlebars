@@ -13,7 +13,7 @@
         <div>
           {{!-- USE HANDLEBARS TO RENDER ITEMS BASED ON CATEGORY --}}
           <ul class="toDo-list">
-            {{#each item}}
+            {{#each Todos}}
             {{#if category=categoryToDo}}
                    {{> items/item-block isActive=true}}
             {{/if}}
@@ -39,13 +39,6 @@
         <div>
           <ul class="toRead-list"></ul>
         </div>
-        {{!-- <form>
-          <div class="form-group">
-            <label for="inputItem"></label>
-            <input type="item" class="toRead-item form-control">
-            <button type="submit" class="add-item btn btn-light">Add Item</button>
-          </div>
-        </form> --}}
         <form action="/api/toReads" method="post">
           <div class="form-group">
             <label for="inputItem"></label>

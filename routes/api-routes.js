@@ -1,6 +1,7 @@
 // Requiring our models and passport as we've configured it
 const db = require("../models");
 const passport = require("../config/passport");
+const isAuthenticated = require("../config/middleware/isAuthenticated");
 
 module.exports = function (app) {
   // -------------Passport Authentication Routing-------------
@@ -55,12 +56,17 @@ module.exports = function (app) {
 
   // -----------------------App Routing-----------------------
   // GET route for getting all items
-  app.get("/api/items", function (req, res) {
-    // findAll returns all entries for a table when used with no options
-    db.Item.findAll({}).then(function (dbItem) {
-      // We have access to the items as an argument inside of the callback function
-      res.json(dbItem);
-    });
+
+  app.get("/api/items", (req, res) => {
+    // If the user already has an account send them to the members page
+      db.Post.findAll({
+        where: {
+          UserId: req.user.id
+        }
+      }).then(function (dbPost) {
+        res.json(dbPost);
+        // res.render("home");
+      })
   });
 
   // POST route for saving a new item
@@ -72,7 +78,7 @@ module.exports = function (app) {
       UserId: req.user.id
     })
       .then(function (dbPost) {
-        res.json(dbPost);
+        res.redirect("/members");
       })
       .catch(function (err) {
         res.json(err)
@@ -88,7 +94,7 @@ module.exports = function (app) {
       UserId: req.user.id
     })
       .then(function (dbPost) {
-        res.json(dbPost);
+        res.redirect("/members");
       })
       .catch(function (err) {
         res.json(err)
@@ -103,7 +109,7 @@ module.exports = function (app) {
       UserId: req.user.id
     })
       .then(function (dbPost) {
-        res.json(dbPost);
+        res.redirect("/members");
       })
       .catch(function (err) {
         res.json(err)
@@ -118,7 +124,7 @@ module.exports = function (app) {
       UserId: req.user.id
     })
       .then(function (dbPost) {
-        res.json(dbPost);
+        res.redirect("/members");
       })
       .catch(function (err) {
         res.json(err)
