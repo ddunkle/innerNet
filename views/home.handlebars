@@ -22,10 +22,10 @@
     </div>
   </header>
   <div class="row">
-    <div class="col-sm-6">
+    <div class="col-sm-3">
       <div class="card">
         <div class="card-body">
-          <h5 class="card-title">To Do</h5>
+          <h5 class="card-title">To Do <i class="fas fa-user-plus"></i></h5>
           <hr>
           <div>
             {{!-- USE HANDLEBARS TO RENDER ITEMS BASED ON CATEGORY --}}
@@ -40,7 +40,7 @@
           <form action="/api/toDos" method="post">
             <div class="form-group">
               <label for="inputItem"></label>
-              <input id="titleToDo" type="item" name="titleToDo" class="toDo-item form-control">
+              <input id="titleToDo" type="item" name="titleToDo" class="toDo-item form-control" placeholder="Enter a to do item">
               <input type="hidden" id="categoryToDo" name="categoryToDo" value="toDo">
               <button type="submit" class="add-item btn btn-light">Add Item</button>
             </div>
@@ -48,7 +48,7 @@
         </div>
       </div>
     </div>
-    <div class="col-sm-6">
+    <div class="col-sm-3">
       <div class="card">
         <div class="card-body">
           <h5 class="card-title">To Read</h5>
@@ -67,9 +67,9 @@
         </div>
       </div>
     </div>
-  </div>
-  <div class="row">
-    <div class="col-sm-6">
+  
+  {{!-- <div class="row"> --}}
+    <div class="col-sm-3">
       <div class="card">
         <div class="card-body">
           <h5 class="card-title">To Watch</h5>
@@ -95,7 +95,7 @@
         </div>
       </div>
     </div>
-    <div class="col-sm-6">
+    <div class="col-sm-3">
       <div class="card">
         <div class="card-body">
           <h5 class="card-title">To Buy</h5>
@@ -121,7 +121,8 @@
         </div>
       </div>
     </div>
-  </div>
+  {{!-- </div> --}}
+</div>
 </div>
 <footer class="container-fluid text-center footer text-muted fixed-bottom">
   <p><br>&copy;

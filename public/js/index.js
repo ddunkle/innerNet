@@ -21,9 +21,7 @@ $(document).ready(function () {
                 let col1 = $("<div>");
                 col1.addClass("col-md-10");
                 let url = JSON.stringify(todos[i].title)
-                console.log(url)
                 url = url.slice(1, 5)
-                console.log(url)
                 if (JSON.stringify(todos[i].title).slice(1, 5) === "http") {
                     let atagOne = $("<a>")
                     atagOne.text(todos[i].title);
@@ -36,7 +34,9 @@ $(document).ready(function () {
                 let col2 = $("<div>");
                 col2.addClass("col-md-2");
                 let atag = $("<a>");
-                atag.text("delete");
+                let itag = $("<i>");
+                itag.addClass("fas fa-dumpster");
+                atag.append(itag);
                 let href = "/api/archive/" + todos[i].id;
                 atag.attr("href", href);
                 col2.append(atag);
