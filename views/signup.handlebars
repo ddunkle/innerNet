@@ -1,15 +1,25 @@
-<div class="container formPage">
+<div class="container-fluid">
   <div class="row">
-    <div class="col-md-3">
-    </div>
-    <div class="col-md-6">
-      <div class="card text-center" style="width: 6">
-        <div class="card-body text-center">
-
-          <div class="text-center">
-            <img src="img/innerNet-logo-trans.png" alt="innerNet" width="200">
+    {{!-- This side contains enticers to sign up --}}
+    <div class="col-md leftDiv">
+      <div class="row">
+        <div class="col-md text-center">
+          <img src="img/innerNet-logo-trans.png" alt="innerNet logo" width="200">
+          <h3 class="tagLine">Collect Your Thoughts!</h3>
+          <div class="info">
+            <h4 class="info"><i class="fas fa-globe icons"></i> Never lose your place online.</h4>
+            <h4 class="info"><i class="fas fa-link icons"></i>Collect and organize links you want to save.</h4>
+            <h4 class="info"><i class="fas fa-list icons"></i>Create to-do lists and digital sticky notes</h4>
+            <h4 class="info"><i class="fas fa-book icons"></i> Customize your bookmark management.</h4>
           </div>
-          <h2 class="text-center sign-up">Sign Up Form</h2>
+        </div>
+      </div>
+    </div>
+    {{!-- This side of the page is for the signup form --}}
+    <div class="col-md rightDiv">
+      <div class="card signupCard text-center" style="width: 6">
+        <div class="card-body text-center">
+          <h2 class="text-center sign-up">Sign Up</h2>
           <form class="signup">
             <div class="form-group text-center">
               <input type="email" class="form-control" id="email-input" placeholder="Email address or username">
@@ -29,8 +39,6 @@
           <p class="text-center">Or log in <a class="link" href="/login">here</a></p>
         </div>
       </div>
-    </div>
-    <div class="col-md-3">
     </div>
   </div>
 </div>
