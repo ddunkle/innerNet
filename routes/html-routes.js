@@ -7,14 +7,6 @@ const isAuthenticated = require("../config/middleware/isAuthenticated");
 
 module.exports = function (app) {
   app.get("/", isAuthenticated, (req, res) => {
-    // If the user already has an account send them to the members page
-      // db.Post.findAll({
-      //   where: {
-      //     UserId: req.user.id
-      //   }
-      // }).then(function (dbPost) {
-      //   res.render("home");
-      // })
       res.render("home");
   });
 
