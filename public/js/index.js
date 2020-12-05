@@ -35,10 +35,13 @@ $(document).ready(function () {
                 col2.addClass("col-md-2");
                 let atag = $("<a>");
                 let itag = $("<i>");
-                itag.addClass("fas fa-dumpster");
+                itag.addClass("far fa-check-circle");
                 atag.append(itag);
                 let href = "/api/archive/" + todos[i].id;
                 atag.attr("href", href);
+                atag.attr("data-toggle", "tooltip");
+                atag.attr("data-placement", "top");
+                atag.attr("title", "Archive");
                 col2.append(atag);
                 row.append(col1, col2);
                 let category = todos[i].category

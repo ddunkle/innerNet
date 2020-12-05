@@ -32,14 +32,14 @@ a {
 }
 
 .card-title {
-  font-size: 3vw;
+  font-size: 2vw;
 }
 
 .card {
   background-color: white;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, 0.4);
-  padding: 10px;
-  margin: 2vw;
+  padding: 5px;
+  margin: 1vw;
 }
 
 .footer {
