@@ -27,15 +27,17 @@
           <h5 class="card-title">To Do <i class="fas fa-list"></i></h5>
           <hr>
           <div>
-            <ul class="toDo-list" id="toDo">
+            <ul class="list-group toDo-list" id="toDo">
             </ul>
           </div>
           <form action="/api/toDos" method="post">
             <div class="form-group">
               <label for="inputItem"></label>
-              <input id="titleToDo" type="item" name="titleToDo" class="toDo-item form-control" placeholder="Enter a to do item">
+              <input id="titleToDo" type="item" name="titleToDo" class="toDo-item form-control"
+                placeholder="Enter a to do item">
               <input type="hidden" id="categoryToDo" name="categoryToDo" value="toDo">
-              <button type="submit" class="add-item btn btn-light">Add Item</button>
+              <button type="submit" class="add-item btn btn-light" data-toggle="tooltip" data-placement="top"
+                title="Add item"><i class="fas fa-plus"></i></button>
             </div>
           </form>
         </div>
@@ -47,34 +49,37 @@
           <h5 class="card-title">To Read <i class="fas fa-book"></i></h5>
           <hr>
           <div>
-            <ul class="toRead-list" id="toRead"></ul>
+            <ul class="list-group toRead-list" id="toRead"></ul>
           </div>
           <form action="/api/toReads" method="post">
             <div class="form-group">
               <label for="inputItem"></label>
-              <input id="titleToRead" type="item" name="titleToRead" class="toDo-item form-control" placeholder="Enter an item to read">
+              <input id="titleToRead" type="item" name="titleToRead" class="toDo-item form-control"
+                placeholder="Enter an item to read">
               <input type="hidden" id="categoryToRead" name="categoryToRead" value="toRead">
-              <button type="submit" class="add-item btn btn-light">Add Item</button>
+              <button type="submit" class="add-item btn btn-light" data-toggle="tooltip" data-placement="top"
+                title="Add item"><i class="fas fa-plus"></i></button>
             </div>
           </form>
         </div>
       </div>
     </div>
-  
     <div class="col-sm-3">
       <div class="card">
         <div class="card-body">
           <h5 class="card-title">To Watch <i class="fas fa-tv"></i></h5>
           <hr>
           <div>
-            <ul class="toWatch-list" id="toWatch"></ul>
+            <ul class="list-group toWatch-list" id="toWatch"></ul>
           </div>
           <form action="/api/toWatches" method="post">
             <div class="form-group">
               <label for="inputItem"></label>
-              <input id="titleToWatch" type="item" name="titleToWatch" class="toDo-item form-control" placeholder="Enter an item to watch">
+              <input id="titleToWatch" type="item" name="titleToWatch" class="toDo-item form-control"
+                placeholder="Enter an item to watch">
               <input type="hidden" id="categoryToWatch" name="categoryToWatch" value="toWatch">
-              <button type="submit" class="add-item btn btn-light">Add Item</button>
+              <button type="submit" class="add-item btn btn-light" data-toggle="tooltip" data-placement="top"
+                title="Add item"><i class="fas fa-plus"></i></button>
             </div>
           </form>
         </div>
@@ -86,20 +91,22 @@
           <h5 class="card-title">To Buy <i class="fas fa-shopping-basket"></i></h5>
           <hr>
           <div>
-            <ul class="toBuy-list" id="toBuy"></ul>
+            <ul class="list-group toBuy-list" id="toBuy"></ul>
           </div>
           <form action="/api/toBuys" method="post">
             <div class="form-group">
               <label for="inputItem"></label>
-              <input id="titleToBuy" type="item" name="titleToBuy" class="toDo-item form-control" placeholder="Enter an item to buy">
+              <input id="titleToBuy" type="item" name="titleToBuy" class="toDo-item form-control"
+                placeholder="Enter an item to buy">
               <input type="hidden" id="categoryToBuy" name="categoryToBuy" value="toBuy">
-              <button type="submit" class="add-item btn btn-light">Add Item</button>
+              <button type="submit" class="add-item btn btn-light" data-toggle="tooltip" data-placement="top"
+                title="Add item"><i class="fas fa-plus"></i></button>
             </div>
           </form>
         </div>
       </div>
     </div>
-</div>
+  </div>
 </div>
 <footer class="container-fluid text-center footer text-muted fixed-bottom">
   <p><br>&copy;

@@ -12,6 +12,7 @@ $(document).ready(function () {
         });
     };
 
+
     function addTodos(todos) {
         console.log(todos);
         for (var i = 0; i < todos.length; i++) {
@@ -19,31 +20,33 @@ $(document).ready(function () {
                 let row = $("<div>");
                 row.addClass("row");
                 let col1 = $("<div>");
-                col1.addClass("col-md-10");
+                col1.addClass("col-md-12");
+                let listItem = $("<li>");
+                listItem.addClass("list-group-item");
                 let url = JSON.stringify(todos[i].title)
                 url = url.slice(1, 5)
                 if (JSON.stringify(todos[i].title).slice(1, 5) === "http") {
                     let atagOne = $("<a>")
                     atagOne.text(todos[i].title);
                     atagOne.attr("href", todos[i].title);
-                    atagOne.attr("target","_blank");
-                    col1.append(atagOne);
+                    atagOne.attr("target", "_blank");
+                    listItem.append(atagOne);
                 } else {
-                    col1.text(todos[i].title);
+                    listItem.text(todos[i].title);
                 }
-                let col2 = $("<div>");
-                col2.addClass("col-md-2");
                 let atag = $("<a>");
                 let itag = $("<i>");
                 itag.addClass("far fa-check-circle");
+                itag.addClass("float-right");
                 atag.append(itag);
                 let href = "/api/archive/" + todos[i].id;
                 atag.attr("href", href);
                 atag.attr("data-toggle", "tooltip");
                 atag.attr("data-placement", "top");
                 atag.attr("title", "Archive");
-                col2.append(atag);
-                row.append(col1, col2);
+                listItem.append(atag);
+                col1.append(listItem);
+                row.append(col1);
                 let category = todos[i].category
                 $(`#${category}`).append(row);
             }
