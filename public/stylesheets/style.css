@@ -9,9 +9,21 @@ form.login {
   text-align: center;
 }
 
+li {
+  font-size: 12px;
+}
+
+.far {
+  text-align: right;
+}
+
 button, .btn {
   background-color: #ff7e00;
   color: white;
+}
+
+.alert {
+  font-size: 12px;
 }
 
 a {
