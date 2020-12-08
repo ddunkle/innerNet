@@ -1,10 +1,8 @@
 body {
   background: url("/img/background.png");
-  padding-bottom: 60px;
 }
 
-form.signup,
-form.login {
+form.signup, form.login {
   margin-top: 50px;
   text-align: center;
 }
@@ -20,6 +18,10 @@ li {
 button, .btn {
   background-color: #ff7e00;
   color: white;
+}
+
+.alert {
+  font-size: 12px;
 }
 
 a {
@@ -58,10 +60,79 @@ a {
 .logoHeader {
   padding: 20px;
   background-color: black;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, 0.4);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3), 0 6px 20px 0 rgba(0, 0, 0, 0.4);
 }
 
 .welcome {
   color: #b30cad;
 }
 
+.leftDiv {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: black;
+  opacity: 90%;
+  padding: 20px;
+  color: #28777c;
+  height: 100vh;
+}
+
+.info {
+  color: #28777c;
+  font-weight: bold;
+}
+
+.icons {
+  padding: 15px;
+}
+
+.signupCard {
+  margin: 4vw;
+}
+
+.rightDiv {
+  margin-top: 6%;
+  padding: 60px;
+}
+
+.tagLine {
+  font-style: italic;
+  color: #b30cad;
+  padding-bottom: 20px;
+}
+
+.windowPage {
+  padding-bottom: 60px;
+}
+
+body {
+  font-family: "Lato";
+  margin: 0;
+  padding: 0;
+}
+
+#myKanban {
+  overflow-x: auto;
+  padding: 20px 0;
+}
+
+.success {
+  background: #00B961;
+  color: #fff
+}
+
+.info {
+  background: #2A92BF;
+  color: #fff
+}
+
+.warning {
+  background: #F4CE46;
+  color: #fff
+}
+
+.error {
+  background: #FB7D44;
+  color: #fff
+}

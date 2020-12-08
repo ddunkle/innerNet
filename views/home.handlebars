@@ -2,7 +2,7 @@
   <header>
     <div class="row logoHeader">
       <div class="col-md-2">
-        <img class="img-fluid" src="/img/innerNet-logo-trans.png" alt="innerNet" max-width="25%">
+        <img class="mw-100" src="/img/innerNet-logo-trans.png" alt="innerNet">
       </div>
       <div class="col-md-10">
         <div class="row">
@@ -35,10 +35,7 @@
                     placeholder="Enter a to do item">
                   <input type="hidden" id="categoryToDo" name="categoryToDo" value="toDo">
                 </div>
-                <div class="col-2">
-                  <button type="submit" class="add-item btn btn-light btn-sm float-right" data-toggle="tooltip"
-                    data-placement="top" title="Add item"><i class="fas fa-plus"></i></button>
-                </div>
+                 {{> submit-button}}
               </div>
             </div>
           </form>
@@ -60,10 +57,7 @@
                     placeholder="Enter an item to read">
                   <input type="hidden" id="categoryToRead" name="categoryToRead" value="toRead">
                 </div>
-                <div class="col-2">
-                  <button type="submit" class="add-item btn btn-light btn-sm float-right" data-toggle="tooltip"
-                    data-placement="top" title="Add item"><i class="fas fa-plus"></i></button>
-                </div>
+                {{> submit-button}}
               </div>
             </div>
           </form>
@@ -85,10 +79,7 @@
                     placeholder="Enter an item to watch">
                   <input type="hidden" id="categoryToWatch" name="categoryToWatch" value="toWatch">
                 </div>
-                <div class="col-2">
-                  <button type="submit" class="add-item btn btn-light btn-sm float-right" data-toggle="tooltip"
-                    data-placement="top" title="Add item"><i class="fas fa-plus"></i></button>
-                </div>
+                {{> submit-button}}
               </div>
             </div>
           </form>
@@ -110,10 +101,7 @@
                     placeholder="Enter an item to buy">
                   <input type="hidden" id="categoryToBuy" name="categoryToBuy" value="toBuy">
                 </div>
-                <div class="col-2">
-                  <button type="submit" class="add-item btn btn-light btn-sm float-right" data-toggle="tooltip"
-                    data-placement="top" title="Add item"><i class="fas fa-plus"></i></button>
-                </div>
+                {{> submit-button}}
               </div>
             </div>
           </form>
@@ -121,8 +109,4 @@
         </div>
       </div>
     </div>
-    <footer class="container-fluid text-center footer text-muted fixed-bottom">
-      <p><br>&copy;
-        2020 Made with <i class="fas fa-heart"></i> and <i class="fas fa-coffee"></i> in Maryland.
-      </p>
-    </footer>
+    {{> footer }}
