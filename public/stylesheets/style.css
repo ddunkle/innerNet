@@ -7,10 +7,6 @@ form.signup, form.login {
   text-align: center;
 }
 
-li {
-  font-size: 12px;
-}
-
 .far {
   text-align: right;
 }
@@ -107,7 +103,6 @@ a {
 }
 
 body {
-  font-family: "Lato";
   margin: 0;
   padding: 0;
 }
