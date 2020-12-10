@@ -1,5 +1,11 @@
-body {
-  background: url("/img/background.png");
+.bo {
+  background: url("/img/background.png"); */
+}
+
+.light-mode {
+  background: none;
+  background-color: white;
+  color: black;
 }
 
 form.signup, form.login {
@@ -11,9 +17,13 @@ form.signup, form.login {
   text-align: right;
 }
 
-button, .btn {
+.sign-up-btn, .log-in-btn, .add-item {
   background-color: #ff7e00;
   color: white;
+}
+
+.light-change-mode {
+  background-color: gray;
 }
 
 .alert {
@@ -77,7 +87,7 @@ a {
 .info {
   color: #28777c;
   font-weight: bold;
-}
+} 
 
 .icons {
   padding: 15px;
@@ -114,11 +124,6 @@ body {
 
 .success {
   background: #00B961;
-  color: #fff
-}
-
-.info {
-  background: #2A92BF;
   color: #fff
 }
 
