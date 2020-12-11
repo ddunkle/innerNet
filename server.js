@@ -19,13 +19,6 @@ const hbs = exphbs.create({
   defaultLaout: 'main',
   layoutsDir: path.join(__dirname, 'views/layouts'),
   partialsDir: path.join(__dirname, 'views/partials'),
-
-  // Helper functions
-  // helpers: {
-  //   items: function(value, options) {
-  //     return "<li>" + options.fn({ : value }) + "<li>";
-  //   }
-  // }
 });
 
 app.engine('handlebars', hbs.engine);

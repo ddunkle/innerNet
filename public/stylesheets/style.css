@@ -1,5 +1,5 @@
 .bo {
-  background: url("/img/background.png"); */
+  background: url("/img/background.png");
 }
 
 .light-mode {
@@ -135,4 +135,8 @@ body {
 .error {
   background: #FB7D44;
   color: #fff
+}
+
+.logOut {
+  margin-bottom: 10px;
 }
